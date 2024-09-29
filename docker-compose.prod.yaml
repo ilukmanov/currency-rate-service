@@ -9,7 +9,6 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - .:/var/www/webman
       - ./docker/prod/php.ini:/usr/local/etc/php/php.ini
     env_file:
       - .env
