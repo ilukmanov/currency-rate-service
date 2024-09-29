@@ -1,0 +1,34 @@
+{
+  "GET /api/currency-rate" : {
+    "transaction" : "GET /api/currency-rate",
+    "sampleCount" : 500000,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 3.3434220000000137,
+    "medianResTime" : 1.0,
+    "minResTime" : 0.0,
+    "maxResTime" : 126.0,
+    "pct1ResTime" : 2.0,
+    "pct2ResTime" : 3.0,
+    "pct3ResTime" : 5.0,
+    "throughput" : 26933.850463262228,
+    "receivedKBytesPerSec" : 5050.096961861667,
+    "sentKBytesPerSec" : 4734.465901745313
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 500000,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 3.3434220000000137,
+    "medianResTime" : 1.0,
+    "minResTime" : 0.0,
+    "maxResTime" : 126.0,
+    "pct1ResTime" : 2.0,
+    "pct2ResTime" : 3.0,
+    "pct3ResTime" : 5.0,
+    "throughput" : 26933.850463262228,
+    "receivedKBytesPerSec" : 5050.096961861667,
+    "sentKBytesPerSec" : 4734.465901745313
+  }
+}

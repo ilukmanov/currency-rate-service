@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="/var/www/webman/phpunit.xml" tests="35" assertions="77" errors="0" failures="0" skipped="0" time="0.450697">
+    <testsuite name="Application Test Suite" tests="35" assertions="77" errors="0" failures="0" skipped="0" time="0.450697">
+      <testsuite name="tests\helper\MathHelperTest" file="/var/www/webman/tests/helper/MathHelperTest.php" tests="6" assertions="6" errors="0" failures="0" skipped="0" time="0.165343">
+        <testcase name="testAdd" file="/var/www/webman/tests/helper/MathHelperTest.php" line="18" class="tests\helper\MathHelperTest" classname="tests.helper.MathHelperTest" assertions="1" time="0.157263"/>
+        <testcase name="testAddWithNegativeValue" file="/var/www/webman/tests/helper/MathHelperTest.php" line="34" class="tests\helper\MathHelperTest" classname="tests.helper.MathHelperTest" assertions="1" time="0.001554"/>
+        <testcase name="testSubtract" file="/var/www/webman/tests/helper/MathHelperTest.php" line="50" class="tests\helper\MathHelperTest" classname="tests.helper.MathHelperTest" assertions="1" time="0.001970"/>
+        <testcase name="testSubtractWithNegativeValue" file="/var/www/webman/tests/helper/MathHelperTest.php" line="66" class="tests\helper\MathHelperTest" classname="tests.helper.MathHelperTest" assertions="1" time="0.001576"/>
+        <testcase name="testAddWithSmallValues" file="/var/www/webman/tests/helper/MathHelperTest.php" line="82" class="tests\helper\MathHelperTest" classname="tests.helper.MathHelperTest" assertions="1" time="0.001507"/>
+        <testcase name="testSubtractWithSmallValues" file="/var/www/webman/tests/helper/MathHelperTest.php" line="98" class="tests\helper\MathHelperTest" classname="tests.helper.MathHelperTest" assertions="1" time="0.001473"/>
+      </testsuite>
+      <testsuite name="tests\middleware\StaticFileTest" file="/var/www/webman/tests/middleware/StaticFileTest.php" tests="3" assertions="9" errors="0" failures="0" skipped="0" time="0.059082">
+        <testcase name="testProcessBlocksDotFiles" file="/var/www/webman/tests/middleware/StaticFileTest.php" line="28" class="tests\middleware\StaticFileTest" classname="tests.middleware.StaticFileTest" assertions="3" time="0.054804"/>
+        <testcase name="testProcessAllowsNormalFiles" file="/var/www/webman/tests/middleware/StaticFileTest.php" line="49" class="tests\middleware\StaticFileTest" classname="tests.middleware.StaticFileTest" assertions="2" time="0.002098"/>
+        <testcase name="testProcessAddsCorsHeaders" file="/var/www/webman/tests/middleware/StaticFileTest.php" line="71" class="tests\middleware\StaticFileTest" classname="tests.middleware.StaticFileTest" assertions="4" time="0.002180"/>
+      </testsuite>
+      <testsuite name="tests\provider\CbrProviderTest" file="/var/www/webman/tests/provider/CbrProviderTest.php" tests="3" assertions="10" errors="0" failures="0" skipped="0" time="0.055686">
+        <testcase name="testFetchCurrencyRatesSuccess" file="/var/www/webman/tests/provider/CbrProviderTest.php" line="27" class="tests\provider\CbrProviderTest" classname="tests.provider.CbrProviderTest" assertions="5" time="0.046332"/>
+        <testcase name="testFetchCurrencyRatesThrowsExceptionOnHttpError" file="/var/www/webman/tests/provider/CbrProviderTest.php" line="68" class="tests\provider\CbrProviderTest" classname="tests.provider.CbrProviderTest" assertions="2" time="0.007252"/>
+        <testcase name="testFetchCurrencyRatesWithSingleCurrency" file="/var/www/webman/tests/provider/CbrProviderTest.php" line="94" class="tests\provider\CbrProviderTest" classname="tests.provider.CbrProviderTest" assertions="3" time="0.002101"/>
+      </testsuite>
+      <testsuite name="tests\provider\CurrencyRateProviderTest" file="/var/www/webman/tests/provider/CurrencyRateProviderTest.php" tests="4" assertions="10" errors="0" failures="0" skipped="0" time="0.062031">
+        <testcase name="testGetRateDataSuccess" file="/var/www/webman/tests/provider/CurrencyRateProviderTest.php" line="33" class="tests\provider\CurrencyRateProviderTest" classname="tests.provider.CurrencyRateProviderTest" assertions="3" time="0.054309"/>
+        <testcase name="testGetRateDataThrowsExceptionIfCurrencyRateNotFound" file="/var/www/webman/tests/provider/CurrencyRateProviderTest.php" line="59" class="tests\provider\CurrencyRateProviderTest" classname="tests.provider.CurrencyRateProviderTest" assertions="1" time="0.003091"/>
+        <testcase name="testGetPreviousRateSuccess" file="/var/www/webman/tests/provider/CurrencyRateProviderTest.php" line="83" class="tests\provider\CurrencyRateProviderTest" classname="tests.provider.CurrencyRateProviderTest" assertions="3" time="0.002291"/>
+        <testcase name="testGetPreviousRateIteratesToFindValidRate" file="/var/www/webman/tests/provider/CurrencyRateProviderTest.php" line="110" class="tests\provider\CurrencyRateProviderTest" classname="tests.provider.CurrencyRateProviderTest" assertions="3" time="0.002340"/>
+      </testsuite>
+      <testsuite name="tests\provider\FixedRateProviderTest" file="/var/www/webman/tests/provider/FixedRateProviderTest.php" tests="3" assertions="3" errors="0" failures="0" skipped="0" time="0.010647">
+        <testcase name="testGetRateReturnsOneForRUR" file="/var/www/webman/tests/provider/FixedRateProviderTest.php" line="25" class="tests\provider\FixedRateProviderTest" classname="tests.provider.FixedRateProviderTest" assertions="1" time="0.006563"/>
+        <testcase name="testGetRateReturnsNullForOtherCurrencies" file="/var/www/webman/tests/provider/FixedRateProviderTest.php" line="37" class="tests\provider\FixedRateProviderTest" classname="tests.provider.FixedRateProviderTest" assertions="1" time="0.002316"/>
+        <testcase name="testGetRateIsCaseInsensitive" file="/var/www/webman/tests/provider/FixedRateProviderTest.php" line="49" class="tests\provider\FixedRateProviderTest" classname="tests.provider.FixedRateProviderTest" assertions="1" time="0.001767"/>
+      </testsuite>
+      <testsuite name="tests\repository\CurrencyRepositoryTest" file="/var/www/webman/tests/repository/CurrencyRepositoryTest.php" tests="3" assertions="6" errors="0" failures="0" skipped="0" time="0.027547">
+        <testcase name="testGetCurrencyRateReturnsFixedRate" file="/var/www/webman/tests/repository/CurrencyRepositoryTest.php" line="38" class="tests\repository\CurrencyRepositoryTest" classname="tests.repository.CurrencyRepositoryTest" assertions="2" time="0.004294"/>
+        <testcase name="testGetCurrencyRateReturnsRateFromCache" file="/var/www/webman/tests/repository/CurrencyRepositoryTest.php" line="60" class="tests\repository\CurrencyRepositoryTest" classname="tests.repository.CurrencyRepositoryTest" assertions="2" time="0.018671"/>
+        <testcase name="testGetCurrencyRateReturnsRateFromExternalSource" file="/var/www/webman/tests/repository/CurrencyRepositoryTest.php" line="86" class="tests\repository\CurrencyRepositoryTest" classname="tests.repository.CurrencyRepositoryTest" assertions="2" time="0.004582"/>
+      </testsuite>
+      <testsuite name="tests\request\CurrencyRequestTest" file="/var/www/webman/tests/request/CurrencyRequestTest.php" tests="6" assertions="13" errors="0" failures="0" skipped="0" time="0.028455">
+        <testcase name="testFromRequestSuccess" file="/var/www/webman/tests/request/CurrencyRequestTest.php" line="16" class="tests\request\CurrencyRequestTest" classname="tests.request.CurrencyRequestTest" assertions="3" time="0.019995"/>
+        <testcase name="testFromRequestInvalidDateFormat" file="/var/www/webman/tests/request/CurrencyRequestTest.php" line="34" class="tests\request\CurrencyRequestTest" classname="tests.request.CurrencyRequestTest" assertions="2" time="0.001744"/>
+        <testcase name="testFromRequestDateInFuture" file="/var/www/webman/tests/request/CurrencyRequestTest.php" line="51" class="tests\request\CurrencyRequestTest" classname="tests.request.CurrencyRequestTest" assertions="2" time="0.001652"/>
+        <testcase name="testFromRequestInvalidCurrencyCode" file="/var/www/webman/tests/request/CurrencyRequestTest.php" line="68" class="tests\request\CurrencyRequestTest" classname="tests.request.CurrencyRequestTest" assertions="2" time="0.001641"/>
+        <testcase name="testFromRequestInvalidBaseCurrencyCode" file="/var/www/webman/tests/request/CurrencyRequestTest.php" line="85" class="tests\request\CurrencyRequestTest" classname="tests.request.CurrencyRequestTest" assertions="2" time="0.001637"/>
+        <testcase name="testFromRequestCurrencyCodesToUpperCase" file="/var/www/webman/tests/request/CurrencyRequestTest.php" line="102" class="tests\request\CurrencyRequestTest" classname="tests.request.CurrencyRequestTest" assertions="2" time="0.001787"/>
+      </testsuite>
+      <testsuite name="tests\response\JsonResponseTest" file="/var/www/webman/tests/response/JsonResponseTest.php" tests="4" assertions="13" errors="0" failures="0" skipped="0" time="0.020733">
+        <testcase name="testSuccessResponse" file="/var/www/webman/tests/response/JsonResponseTest.php" line="17" class="tests\response\JsonResponseTest" classname="tests.response.JsonResponseTest" assertions="4" time="0.015559"/>
+        <testcase name="testWarningResponse" file="/var/www/webman/tests/response/JsonResponseTest.php" line="36" class="tests\response\JsonResponseTest" classname="tests.response.JsonResponseTest" assertions="4" time="0.001672"/>
+        <testcase name="testErrorResponse" file="/var/www/webman/tests/response/JsonResponseTest.php" line="55" class="tests\response\JsonResponseTest" classname="tests.response.JsonResponseTest" assertions="4" time="0.001836"/>
+        <testcase name="testDebugModeAppliesPrettyPrint" file="/var/www/webman/tests/response/JsonResponseTest.php" line="74" class="tests\response\JsonResponseTest" classname="tests.response.JsonResponseTest" assertions="1" time="0.001665"/>
+      </testsuite>
+      <testsuite name="tests\service\CurrencyServiceTest" file="/var/www/webman/tests/service/CurrencyServiceTest.php" tests="3" assertions="7" errors="0" failures="0" skipped="0" time="0.021172">
+        <testcase name="testGetRateWithDifferenceSuccess" file="/var/www/webman/tests/service/CurrencyServiceTest.php" line="39" class="tests\service\CurrencyServiceTest" classname="tests.service.CurrencyServiceTest" assertions="3" time="0.015410"/>
+        <testcase name="testGetRateWithDifferenceThrowsExceptionWhenCurrentRateNotFound" file="/var/www/webman/tests/service/CurrencyServiceTest.php" line="72" class="tests\service\CurrencyServiceTest" classname="tests.service.CurrencyServiceTest" assertions="2" time="0.003104"/>
+        <testcase name="testGetRateWithDifferenceThrowsExceptionWhenPreviousRateNotFound" file="/var/www/webman/tests/service/CurrencyServiceTest.php" line="96" class="tests\service\CurrencyServiceTest" classname="tests.service.CurrencyServiceTest" assertions="2" time="0.002659"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

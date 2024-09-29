@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/prod/Dockerfile
+    container_name: currency-rate-app
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/var/www/webman
+      - ./docker/prod/php.ini:/usr/local/etc/php/php.ini
+    env_file:
+      - .env
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+    container_name: currency-rate-redis
+    volumes:
+      - redis-data:/data
+    command: ["redis-server", "--appendonly", "yes"]
+
+volumes:
+  redis-data:
+    driver: local

@@ -1,0 +1,109 @@
+openapi: 3.0.0
+info:
+  title: API Курса Валют
+  version: '1.0.0'
+servers:
+  - url: https://cbr.lukmanov.net/api
+  - url: http://localhost:8080/api
+paths:
+  /currency-rate:
+    get:
+      tags:
+        - Курсы валют
+      summary: Получить курс валюты и разницу курса
+      description: Возвращает курс обмена для указанной валюты относительно базовой валюты и разницу курса по сравнению с предыдущим торговым днем.
+      parameters:
+        - name: date
+          in: query
+          required: true
+          description: "Дата, для которой запрашивается курс валюты (формат: YYYY-MM-DD)."
+          schema:
+            type: string
+            format: date
+            example: "2024-09-29"
+        - name: currency
+          in: query
+          required: true
+          description: "Код валюты, для которой запрашивается курс (например, USD)."
+          schema:
+            type: string
+            example: "USD"
+        - name: base_currency
+          in: query
+          required: true
+          description: "Код базовой валюты для сравнения (например, RUR)."
+          schema:
+            type: string
+            example: "RUR"
+      responses:
+        '200':
+          description: "Успешный ответ с курсом валюты и разницей."
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: "Статус ответа."
+                    example: success
+                  data:
+                    type: object
+                    nullable: true
+                    description: "Данные по курсу валюты."
+                    properties:
+                      rate:
+                        type: number
+                        format: float
+                        description: "Курс валюты."
+                        example: 92.7126
+                      difference:
+                        type: number
+                        format: float
+                        description: "Разница курса по сравнению с предыдущим днем."
+                        example: 0.3052
+                  errors:
+                    type: array
+                    items:
+                      type: string
+                    description: "Список ошибок, если имеются."
+                    nullable: true
+                    example: null
+              examples:
+                successResponse:
+                  value:
+                    status: "success"
+                    data:
+                      rate: 92.7126
+                      difference: 0.3052
+                    errors: null
+        '400':
+          description: "Ошибочный ответ из-за неверных параметров или отсутствия данных."
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: "Статус ответа."
+                    example: error
+                  data:
+                    type: object
+                    nullable: true
+                    description: "Данные отсутствуют в случае ошибки."
+                    example: null
+                  errors:
+                    type: array
+                    items:
+                      type: string
+                    description: "Список ошибок."
+                    example:
+                      - "Курс валюты RUG не найден для даты: 2024-09-29"
+              examples:
+                errorResponse:
+                  value:
+                    status: "error"
+                    data: null
+                    errors:
+                      - "Курс валюты RUG не найден для даты: 2024-09-29"
